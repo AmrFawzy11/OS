@@ -29,8 +29,11 @@ public class Chart {
         //adding process id in the middle
         for(int i=0 ; i<p.size() ; i++){
             for(int j=0; j<7 ; j++)  graph += " ";
-            if(p.get(i).getJob_number() != -1)  graph += "P";
-            graph += p.get(i).getJob_number();
+            if(p.get(i).getJob_number() != -1){ 
+                graph += "P";
+                graph += p.get(i).getJob_number();
+            }
+            else graph+="    ";
             for(int j=0; j<7 ; j++)  graph += " ";
             graph += "|";
         }
@@ -47,7 +50,7 @@ public class Chart {
         graph += p.get(0).getStart_time();
         float time =  p.get(0).getStart_time();;
         for(int i=0 ; i<p.size() ; i++){
-            for(int j=0; j<7 ; j++)  graph += "  ";
+            for(int j=0; j<13 ; j++)  graph += " ";
             time += p.get(i).getBurst_time();
             graph += time;
         }
